@@ -1,7 +1,16 @@
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
+@DynamoDBTable(tableName = "TaskTracker") // Table name provided in instructions
 public class Task {
+    @DynamoDBHashKey(attributeName = "jobId") // This is the primary key
     private String jobId;
+    @DynamoDBAttribute(attributeName = "completedBy")
     private String completedBy;
+    @DynamoDBAttribute(attributeName = "yearCompleted")
     private Integer yearCompleted;
+    @DynamoDBAttribute(attributeName = "hoursTaken")
     private Integer hoursTaken;
 
     public String getJobId() {

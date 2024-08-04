@@ -18,6 +18,7 @@ public class TaskDAO {
      */
     public void deleteTask(Task task) {
         //TODO: Implement functionality to delete the task that's passed in
+        mapper.delete(task);
     }
 
     /**
